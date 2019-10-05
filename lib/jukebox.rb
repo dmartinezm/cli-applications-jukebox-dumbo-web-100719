@@ -8,16 +8,16 @@ end
 
 def play(song_list)
   puts "Please enter a song name or number:"
-  selection= gets.strip
-
-  song_list.each_with_index do |song,index|
-    if selection.to_s==song || selection.to_i==index+1
-      puts "Playing #{song}"
-    else
-      puts "Invalid input, please try again"
-      #play(song_list)
-    
+  selection= gets.chomp.strip
+  
+  if selection.to_i>=1 && selection.to_i<=song_list.length
+    puts "Playing #{song_list[selection.to_i-1]}"
+  elsif song_list.include?(selection)
+    puts "Playing #{song_list.find{|song| song==selection}}"
+  else
+    puts "Invalid input, please try again" 
   end
+
 end
 
 def list(song_list)
