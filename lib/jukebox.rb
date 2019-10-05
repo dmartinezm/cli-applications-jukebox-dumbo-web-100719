@@ -36,10 +36,10 @@ def run(song_list)
     selection= gets.chomp.strip
     case selection
     when "play"
-      play
+      play(song_list)
       break
     when "list"
-      list
+      list(song_list)
       break
     when "exit"
       exit_jukebox
