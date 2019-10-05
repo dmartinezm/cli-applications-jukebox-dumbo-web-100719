@@ -31,4 +31,22 @@ def exit_jukebox
 end
 
 def run
+  while true do
+    puts "Please enter a command:"
+    selection= gets.chomp.strip
+    case selection
+    when "play"
+      play
+      break
+    when "list"
+      list
+      break
+    when "exit"
+      exit_jukebox
+      break
+    when "help"
+      help
+      break
+  end
+  
 end
