@@ -47,6 +47,8 @@ def run
     when "help"
       help
       break
+    else
+      puts "Invalid entry"
   end
   
 end
